@@ -32,14 +32,12 @@ uv lock
 uv sync
 ```
 
-Set environment variables:
-
-Ollama:
+Create environment file:
 
 ```bash
-set LLM_PROVIDER=ollama
-set OLLAMA_URL=http://localhost:11434
-set OLLAMA_MODEL=llama3.2:3b
+LLM_PROVIDER=ollama
+OLLAMA_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.2:3b
 ```
 
 Build data/index (one-time or whenever source data changes):
@@ -58,23 +56,23 @@ Then open: `http://localhost:8501`
 
 ### 3. Docker run
 
-Set environment variables:
-
-Ollama:
+Create environment file:
 
 ```bash
-set LLM_PROVIDER=ollama
-set OLLAMA_URL=http://host.docker.internal:11434
-set OLLAMA_MODEL=llama3.2:3b
+LLM_PROVIDER=ollama
+OLLAMA_URL=http://host.docker.internal:11434
+OLLAMA_MODEL=llama3.2:3b
 ```
 
-Build and run:
+Build and run (will take awhile as data will be ingested into the chromadb):
 
 ```bash
 docker compose --env-file .env up --build
 ```
 
 App will be available at: `http://localhost:8501`
+
+Note that due to latency issues due to model choice/availability, chatbot would take around 5-6 minutes to generate an output. If timeout occurs, a fallback template would be used to show the results. 
 
 ## Repository Structure
 
@@ -125,15 +123,21 @@ There are also features available but it is only able to do a one to one compari
 
 The project aims to build an AI-powered assistant that helps planners assess whether current SkillsFuture courses are relevant to specific career roles and identify what more needs to be done.
 
+
+
 ### 2. Who is affected by this problem?
 
 The main stakeholder is SkillsFuture Singapore, especially teams involved in course planning, workforce development, and policy evaluation.
+
+
 
 ### 3. What is the impact of not solving this problem?
 
 If this problem is not solved, Singapore may face a growing mismatch between the skills citizens have and the skills employers need. As AI and automation change job requirements, workers who are not equipped with relevant skills may find it harder to move into new or higher-demand roles.
 
 There is also a risk that public upskilling resources are not used effectively. As training providers may continue offering generic courses that do not address important skill gaps.
+
+
 
 ### 4. How could data science or AI address this problem? Why is it necessary?
 
@@ -147,9 +151,11 @@ Identify missing skills or course gaps.
 Suggest what new courses or course bundles could be introduced.
 
 
+
 ### 5. What would success look like?
 
 Success means the tool helps SkillsFuture planners make better decisions about whether current courses are aligned with labour-market demand and citizen interest.
+
 
 
 ## Dataset used
