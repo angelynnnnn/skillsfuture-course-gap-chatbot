@@ -72,7 +72,7 @@ docker compose --env-file .env up --build
 
 App will be available at: `http://localhost:8501`
 
-Note that due to latency issues due to model choice/availability, chatbot would take around 5-6 minutes to generate an output. If timeout occurs, a fallback template would be used to show the results. 
+Note that due to latency issues due to model choice/availability, chatbot would take around 5-6 minutes to generate an output. If it exceeds timeout threshold, a fallback template would be used to show the results. 
 
 ## Repository Structure
 
