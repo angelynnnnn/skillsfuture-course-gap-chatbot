@@ -1,6 +1,9 @@
 # SkillsFuture Course Recommender with LLM Gap Detection
 
-## How to run?
+Click here to view the [demo video](https://drive.google.com/file/d/1UadOzLvZQs_jdQr3SAw-R3Zju0krBBV5/view?usp=sharing)!
+
+
+## How to run
 
 ### 1. Prerequisites
 
@@ -147,6 +150,33 @@ Suggest what new courses or course bundles could be introduced.
 ### 5. What would success look like?
 
 Success means the tool helps SkillsFuture planners make better decisions about whether current courses are aligned with labour-market demand and citizen interest.
+
+
+## Dataset used
+
+This project uses two main datasets: job descriptions and SkillsFuture course listings.
+
+### Job Description Dataset
+
+The job description data was obtained from a [Kaggle job skill set dataset](https://www.kaggle.com/datasets/batuhanmutlu/job-skill-set).
+
+This dataset was chosen because it includes a `job_skill_set` column, which provides pre-labelled skills for each job description. This was useful for the prototype because I was unable to integrate SkillsFuture’s own [Skills Extraction and Comparison Tool](https://jobsandskills.skillsfuture.gov.sg/data-and-tools/tools/skills-extraction-and-comparison-tool) within the project constraints.
+
+The job description dataset is used to represent labour-market demand. In the pipeline, relevant job descriptions are retrieved based on the user’s query, and their extracted skills are aggregated to form the required skill profile for a given role.
+
+### SkillsFuture Course Dataset
+
+The course data was collected from the [MySkillsFuture course search portal](https://www.myskillsfuture.gov.sg/content/portal/en/training-exchange/course-landing.html).
+
+This dataset is used to represent the current course supply. 
+
+Since the course dataset did not come with a clean structured skill list, I used [SkillNER](https://github.com/AnasAito/SkillNER) to extract skills from the course text as a temporary measure. This allowed me to create a course-skill inventory and test whether the overall gap-detection mechanism works.
+
+### Data Limitation
+
+The extracted course skills are not perfect. Some extracted skills are broad, noisy, or include soft skills. However, this was acceptable for the prototype because the aim was to test the end-to-end mechanism: retrieving job descriptions, identifying required skills, comparing them against course skills, and surfacing possible course gaps.
+
+In a stronger production version, I would replace or improve the skill extraction step using a SkillsFuture-aligned taxonomy or official skills extraction tool, so that the extracted skills are more consistent with Singapore’s Skills Framework.
 
 
 ## Deployment Considerations
