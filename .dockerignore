@@ -1,0 +1,18 @@
+.git
+.gitignore
+.venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local runtime/data artifacts
+chroma_db/
+*.sqlite3
+
+# Keep build context lean; app reads from mounted repo in compose anyway
+README.md
