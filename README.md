@@ -107,7 +107,7 @@ App will be available at: `http://localhost:8501`
 ```
 
 ## Background 
-1. What is the problem to solve?
+### 1. What is the problem to solve?
 
 SkillsFuture supports Singaporeans in reskilling and upskilling, especially as technology and AI reshape the labour market. However, course availability alone does not guarantee that workers are being trained for roles that employers actually need.
 
@@ -121,17 +121,17 @@ There are also features available but it is only able to do a one to one compari
 
 The project aims to build an AI-powered assistant that helps planners assess whether current SkillsFuture courses are relevant to specific career roles and identify what more needs to be done.
 
-2. Who is affected by this problem?
+### 2. Who is affected by this problem?
 
 The main stakeholder is SkillsFuture Singapore, especially teams involved in course planning, workforce development, and policy evaluation.
 
-3. What is the impact of not solving this problem?
+### 3. What is the impact of not solving this problem?
 
 If this problem is not solved, Singapore may face a growing mismatch between the skills citizens have and the skills employers need. As AI and automation change job requirements, workers who are not equipped with relevant skills may find it harder to move into new or higher-demand roles.
 
 There is also a risk that public upskilling resources are not used effectively. As training providers may continue offering generic courses that do not address important skill gaps.
 
-4. How could data science or AI address this problem? Why is it necessary?
+### 4. How could data science or AI address this problem? Why is it necessary?
 
 AI is useful because the key information is mostly unstructured. Job postings, course descriptions, and skills frameworks are written in natural language, making them hard to compare manually at scale.
 
@@ -143,11 +143,9 @@ Identify missing skills or course gaps.
 Suggest what new courses or course bundles could be introduced.
 
 
-5. What would success look like? How would you measure it?
+### 5. What would success look like?
 
 Success means the tool helps SkillsFuture planners make better decisions about whether current courses are aligned with labour-market demand and citizen interest.
-
-First, from the government perspective, success can be measured through exploratory data analysis of course distribution. 
 
 
 ## Deployment Considerations
