@@ -9,7 +9,7 @@
 - (Optional) Docker Desktop
 - Install Ollama from [Ollama’s Windows download page](https://ollama.com/download/windows)
 
-    Ensure that you run the following
+    Ensure that you run the following:
     ```bash
     ollama pull llama3.2:3b
     ollama serve
