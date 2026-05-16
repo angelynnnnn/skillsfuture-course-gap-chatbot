@@ -74,6 +74,7 @@ App will be available at: `http://localhost:8501`
 
 ## Repository Structure
 
+```
 ├── .dockerignore                    # Excludes files from Docker build context
 ├── .env                             # Local environment variables (LLM provider/model/keys)
 ├── .gitignore                       # Files/folders ignored by Git
@@ -103,6 +104,7 @@ App will be available at: `http://localhost:8501`
     ├── llm_client.py                # LLM provider API wrapper
     ├── llm_answer.py                # Final answer prompt and response logic
     └── debug_chroma.py              # Debug helper for Chroma inspection
+```
 
 ## Background 
 1. What is the problem to solve?
