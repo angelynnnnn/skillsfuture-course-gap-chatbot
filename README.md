@@ -156,6 +156,19 @@ Suggest what new courses or course bundles could be introduced.
 
 Success means the tool helps SkillsFuture planners make better decisions about whether current courses are aligned with labour-market demand and citizen interest.
 
+In the context of this prototype, success is measured by whether the system can correctly support the course-gap analysis workflow. This includes whether it can retrieve relevant job descriptions for a given role, identify the required skills from those job descriptions, retrieve relevant SkillsFuture courses, and flag skills that are weakly covered or not clearly covered by the current course catalogue.
+
+The evaluation approach is described in more detail in the **Evaluation and Results** section below.
+
+
+### 6. Current similar tools 
+One relevant existing tool is SkillsFuture’s [Skills Extraction and Comparison Tool](https://jobsandskills.skillsfuture.gov.sg/data-and-tools/tools/skills-extraction-and-comparison-tool).
+
+This tool uses machine learning and domain-adaptive language models to analyse unstructured text, such as job postings, course descriptions, or other free-text inputs. It can extract relevant skills from the text and compare two sets of text to identify shared and unique skills.
+
+However, the tool is mainly designed for **one-to-one comparison**. For example, a user can compare one job description against one course outline to see which skills overlap and which skills are unique.
+
+My project builds on a related idea but focuses on a broader planning use case. Instead of comparing only one job description to one course, the chatbot retrieves multiple relevant job descriptions for a role, compares them against multiple relevant retrieved courses, and identifies potential course-supply gaps.
 
 
 ## Dataset used
@@ -194,7 +207,7 @@ At realistic scale, the heavier processing should be done offline. Skill extract
 Once live, I would monitor retrieval relevance, response latency, failed data ingestions, changes in detected course gaps. The risk that would keep me up at night is false confidence: the system may label a skill as “covered” because a course description contains similar wording, even though the course does not teach that skill deeply enough. For this reason, the tool should support human review before any funding or policy decision is made.
 
 
-## Evaluation 
+## Evaluation & Results
 
 For the current prototype, evaluation was done manually by comparing the system output against the expected gaps for selected test queries. Since the current implementation uses a limited top-k retrieval setting due to model and runtime constraints, the evaluation is intended to show whether the mechanism works rather than to claim production-level accuracy.
 
